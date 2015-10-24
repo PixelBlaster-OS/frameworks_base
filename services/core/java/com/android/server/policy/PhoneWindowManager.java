@@ -669,8 +669,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     // Maps global key codes to the components that will handle them.
     private GlobalKeyManager mGlobalKeyManager;
 
-    // Hide power menu on secure lockscreen
-    private boolean mHideGlobalActionsOnSecure;
+    private boolean mGlobalActionsOnLockEnable = true;
 
     // Fallback actions by key code.
     private final SparseArray<KeyCharacterMap.FallbackAction> mFallbackActions =
@@ -885,9 +884,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOZE_TRIGGER_DOUBLETAP), false, this,
                     UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.Secure.getUriFor(
-                    Settings.Secure.POWER_MENU_HIDE_ON_SECURE), false, this,
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_ENABLE_POWER_MENU), true, this,
                     UserHandle.USER_ALL);
+
             updateSettings();
         }
 
@@ -1722,7 +1722,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     void showGlobalActionsInternal() {
         final boolean keyguardShowing = isKeyguardLocked();
         if (keyguardShowing && isKeyguardSecure(mCurrentUserId) &&
-                mHideGlobalActionsOnSecure) {
+                !mGlobalActionsOnLockEnable) {
             return;
         }
         if (mGlobalActions == null) {
@@ -2855,8 +2855,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             mTorchGesture = Settings.System.getIntForUser(resolver,
                     Settings.System.TORCH_POWER_BUTTON_GESTURE,
                     0, UserHandle.USER_CURRENT) != 0;
-            mHideGlobalActionsOnSecure = Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.POWER_MENU_HIDE_ON_SECURE, 0, UserHandle.USER_CURRENT) != 0;
+            mGlobalActionsOnLockEnable = Settings.System.getIntForUser(resolver,
+                    Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, 1,
+                    UserHandle.USER_CURRENT) != 0;
         }
         if (updateRotation) {
             updateRotation(true);
