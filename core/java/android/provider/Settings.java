@@ -5736,6 +5736,14 @@ public final class Settings {
        public static final String BATTERY_LIGHT_REALLYFULL_COLOR = "battery_light_reallyfull_color";
 
         /**
+         * Whether the HighTouchSensitivity is activated or not.
+         * 0 = off, 1 = on
+         */
+        @Readable
+        @SuppressLint("NoSettingsProvider")
+        public static final String HIGH_TOUCH_SENSITIVITY_ENABLE = "high_touch_sensitivity_enable";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
@@ -5991,6 +5999,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_MEDIUM_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_FULL_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_REALLYFULL_COLOR);
+            PRIVATE_SETTINGS.add(HIGH_TOUCH_SENSITIVITY_ENABLE);
         }
 
         /**
@@ -10871,6 +10880,12 @@ public final class Settings {
          * @hide
          */
         public static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
+
+        /**
+         * Whether touch hovering is enabled on supported hardware
+         * @hide
+         */
+        public static final String FEATURE_TOUCH_HOVERING = "feature_touch_hovering";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to

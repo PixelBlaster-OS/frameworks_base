@@ -200,6 +200,7 @@ public class SecureSettings {
         Settings.Secure.SECURE_LOCKSCREEN_QS_DISABLED,
         Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
         Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
-        Settings.Secure.STATUS_BAR_SHOW_VIBRATE_ICON
+        Settings.Secure.STATUS_BAR_SHOW_VIBRATE_ICON,
+        Settings.Secure.FEATURE_TOUCH_HOVERING
     };
 }
