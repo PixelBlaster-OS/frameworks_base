@@ -571,6 +571,11 @@ public class StatusBarCommandQueueCallbacks implements CommandQueue.Callbacks {
     }
 
     @Override
+    public void toggleCameraFlash() {
+        mStatusBar.toggleCameraFlash();
+    }
+
+    @Override
     public void showWirelessChargingAnimation(int batteryLevel) {
         mStatusBar.showWirelessChargingAnimation(batteryLevel);
     }
