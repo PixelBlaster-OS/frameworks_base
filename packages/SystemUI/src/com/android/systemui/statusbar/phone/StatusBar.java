@@ -3887,27 +3887,47 @@ public class StatusBar extends SystemUI implements
         }
 
         void observe() {
-            mSystemSettings.registerContentObserver(Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, this);
-            mSystemSettings.registerContentObserver(Settings.System.DOUBLE_TAP_SLEEP_GESTURE, this);
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_MEDIA_BLUR),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
-            switch (uri.getLastPathSegment()) {
-                case Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN:
-                case Settings.System.DOUBLE_TAP_SLEEP_GESTURE:
-                    setDoubleTapToSleepGesture();
+            super.onChange(selfChange, uri);
+            if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN))
+                    || uri.equals(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE))) {
+                setDoubleTapToSleepGesture();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_MEDIA_BLUR))) {
+                setLockScreenMediaBlurLevel();
             }
         }
 
         void update() {
             setDoubleTapToSleepGesture();
+            setLockScreenMediaBlurLevel();
         }
 
         private void setDoubleTapToSleepGesture() {
             if (mNotificationShadeWindowViewController != null) {
                 mNotificationShadeWindowViewController.setDoubleTapToSleepGesture();
             }
+        }
+    }
+
+    private void setLockScreenMediaBlurLevel() {
+        if (mMediaManager != null) {
+            mMediaManager.setLockScreenMediaBlurLevel();
         }
     }
 
