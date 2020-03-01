@@ -157,4 +157,6 @@ interface IStatusBarService
      * display.
      */
     void suppressAmbientDisplay(boolean suppress);
+
+    void killForegroundApp();
 }
