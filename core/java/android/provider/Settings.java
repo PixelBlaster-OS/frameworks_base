@@ -5610,6 +5610,12 @@ public final class Settings {
         public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
 
         /**
+         * Whether auto brightness is applied one shot when screen is turned on
+         * @hide
+         */
+        public static final String AUTO_BRIGHTNESS_ONE_SHOT = "auto_brightness_one_shot";
+
+        /**
          * Force full screen for devices with cutout
          * @hide
          */
@@ -5763,6 +5769,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
             PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
             PRIVATE_SETTINGS.add(FORCE_FULLSCREEN_CUTOUT_APPS);
+            PRIVATE_SETTINGS.add(AUTO_BRIGHTNESS_ONE_SHOT);
         }
 
         /**
