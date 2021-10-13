@@ -75,6 +75,7 @@ public class PixelPropsUtils {
         propsToChange.put("PRODUCT", "redfin");
         propsToChange.put("MODEL", "Pixel 5");
         propsToChange.put("ID", "SPB5.210812.002");
+        propsToChange.put("SECURITY_PATCH", "2021-09-05");
         propsToChange.put("FINGERPRINT", "google/redfin/redfin:12/SPB5.210812.002/7671067:user/release-keys");
         propsToChangePixel3XL = new HashMap<>();
         propsToChangePixel3XL.put("BRAND", "google");
@@ -83,6 +84,7 @@ public class PixelPropsUtils {
         propsToChangePixel3XL.put("PRODUCT", "crosshatch");
         propsToChangePixel3XL.put("MODEL", "Pixel 3 XL");
         propsToChangePixel3XL.put("ID", "SPB5.210812.002");
+        propsToChangePixel3XL.put("SECURITY_PATCH", "2021-09-05");
         propsToChangePixel3XL.put("FINGERPRINT", "google/crosshatch/crosshatch:12/SPB5.210812.002/7671067:user/release-keys");
     }
 
