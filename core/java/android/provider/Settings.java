@@ -5180,6 +5180,11 @@ public final class Settings {
          */
 
         /**
+         * @hide
+         */
+        public static final String WFD_LEGACY_VIDEO_MODE = "wfd_legacy_video_mode";
+
+        /**
          * Whether to show the battery info on the lockscreen while charging
          * @hide
          */
