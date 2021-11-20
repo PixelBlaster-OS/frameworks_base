@@ -45,9 +45,11 @@ import android.os.PowerManager;
 import android.os.Process;
 import android.os.RemoteException;
 import android.os.Trace;
+import android.os.UserHandle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -654,7 +656,9 @@ public class UdfpsController implements DozeReceiver, UdfpsHbmProvider {
      */
     @VisibleForTesting
     public void playStartHaptic() {
-        if (mVibrator != null) {
+        boolean FingerprintVib = Settings.System.getIntForUser(mContext.getContentResolver(),
+            Settings.System.FP_START_VIBRATE, 1, UserHandle.USER_CURRENT) == 1;
+        if (mVibrator != null && FingerprintVib) {
             mVibrator.vibrate(
                     Process.myUid(),
                     mContext.getOpPackageName(),
