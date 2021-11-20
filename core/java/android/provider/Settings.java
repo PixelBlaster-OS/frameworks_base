@@ -5272,6 +5272,13 @@ public final class Settings {
         public static final String STATUSBAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
 
         /**
+         * whether to enable or disable vibration when starting fingerprint auth
+         *
+         * @hide
+         */
+        public static final String FP_START_VIBRATE = "fingerprint_start_vib";
+
+        /**
          * whether to enable or disable vibration on succesful fingerprint auth
          *
          * @hide
