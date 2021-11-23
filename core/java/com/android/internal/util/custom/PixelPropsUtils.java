@@ -74,12 +74,17 @@ public class PixelPropsUtils {
         propsToChange = new HashMap<>();
         propsToChange.put("BRAND", "google");
         propsToChange.put("MANUFACTURER", "Google");
-        propsToChange.put("DEVICE", "redfin");
-        propsToChange.put("PRODUCT", "redfin");
-        propsToChange.put("MODEL", "Pixel 5");
+        propsToChange.put("DEVICE", "raven");
+        propsToChange.put("PRODUCT", "raven");
+        propsToChange.put("MODEL", "Pixel 6 Pro");
         propsToChange.put("ID", "SPB5.210812.002");
         propsToChange.put("SECURITY_PATCH", "2021-09-05");
-        propsToChange.put("FINGERPRINT", "google/redfin/redfin:12/SPB5.210812.002/7671067:user/release-keys");
+        propsToChange.put("FINGERPRINT", "google/raven/raven:12/SD1A.210817.036/7805805:user/release-keys");
+        propsToChange.put("IS_DEBUGGABLE", false);
+        propsToChange.put("IS_ENG", false);
+        propsToChange.put("IS_USERDEBUG", false);
+        propsToChange.put("IS_USER", true);
+        propsToChange.put("TYPE", "user");
         propsToChangePixel3XL = new HashMap<>();
         propsToChangePixel3XL.put("BRAND", "google");
         propsToChangePixel3XL.put("MANUFACTURER", "Google");
@@ -87,7 +92,6 @@ public class PixelPropsUtils {
         propsToChangePixel3XL.put("PRODUCT", "crosshatch");
         propsToChangePixel3XL.put("MODEL", "Pixel 3 XL");
         propsToChangePixel3XL.put("ID", "SPB5.210812.002");
-        propsToChangePixel3XL.put("SECURITY_PATCH", "2021-09-05");
         propsToChangePixel3XL.put("FINGERPRINT", "google/crosshatch/crosshatch:12/SPB5.210812.002/7671067:user/release-keys");
     }
 
