@@ -120,6 +120,7 @@ public class UdfpsController implements DozeReceiver, UdfpsHbmProvider {
     @NonNull private final DumpManager mDumpManager;
     @NonNull private final KeyguardUpdateMonitor mKeyguardUpdateMonitor;
     @Nullable private final Vibrator mVibrator;
+    @NonNull private final Handler mMainHandler;
     @NonNull private final FalsingManager mFalsingManager;
     @NonNull private final PowerManager mPowerManager;
     @NonNull private final AccessibilityManager mAccessibilityManager;
@@ -316,7 +317,7 @@ public class UdfpsController implements DozeReceiver, UdfpsHbmProvider {
             mFgExecutor.execute(() -> {
                 if (acquiredInfo == 6 && (mStatusBarStateController.isDozing() || !mScreenOn)) {
                     if (vendorCode == 22) { // Use overlay to determine pressed vendor code?
-                        mPowerManager.wakeUp(SystemClock.uptimeMillis(),
+                        mPowerManager.wakeUp(mSystemClock.uptimeMillis(),
                                 PowerManager.WAKE_REASON_GESTURE, TAG);
                         onAodInterrupt(0, 0, 0, 0); // To-Do pass proper values
                     }
@@ -556,6 +557,7 @@ public class UdfpsController implements DozeReceiver, UdfpsHbmProvider {
         mExecution = execution;
         // TODO (b/185124905): inject main handler and vibrator once done prototyping
         mVibrator = vibrator;
+        mMainHandler = mainHandler;
         mInflater = inflater;
         // The fingerprint manager is queried for UDFPS before this class is constructed, so the
         // fingerprint manager should never be null.
