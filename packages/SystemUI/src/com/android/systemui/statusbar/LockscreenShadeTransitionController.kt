@@ -13,7 +13,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import androidx.annotation.VisibleForTesting
-import com.android.internal.util.iron.IRONUtils
+import com.android.internal.util.blaster.BlasterUtils
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent
 import com.android.systemui.ExpandHelper
 import com.android.systemui.Gefingerpoken
@@ -610,7 +610,7 @@ class DragDownHelper(
         statusBarHeaderHeight = context
                 .resources.getDimensionPixelSize(R.dimen.status_bar_header_height_keyguard)
         goToSleep = Runnable {
-            IRONUtils.switchScreenOff(context)
+            BlasterUtils.switchScreenOff(context)
         }
     }
 
