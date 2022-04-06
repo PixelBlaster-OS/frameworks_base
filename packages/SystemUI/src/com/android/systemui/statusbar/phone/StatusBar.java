@@ -2701,9 +2701,10 @@ public class StatusBar extends SystemUI implements
                     break;
                 case DevicePolicyManager.ACTION_SHOW_DEVICE_MONITORING_DIALOG:
                     mQSPanelController.showDeviceMonitoringDialog();
-            }
-            else if (NotificationPanelViewController.CANCEL_NOTIFICATION_PULSE_ACTION.equals(action)) {
+                    break;
+                case NotificationPanelViewController.CANCEL_NOTIFICATION_PULSE_ACTION:
                 mNotificationPanelViewController.stopNotificationPulse();
+
             }
             Trace.endSection();
         }
