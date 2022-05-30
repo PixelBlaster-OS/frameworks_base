@@ -23,6 +23,8 @@ import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.icu.text.NumberFormat;
+import android.os.UserHandle;
+import android.provider.Settings;
 
 import androidx.annotation.VisibleForTesting;
 
@@ -214,7 +216,14 @@ public class AnimatableClockController extends ViewController<AnimatableClockVie
     private void initColors() {
         mLockScreenColor = Utils.getColorAttrDefaultColor(getContext(),
                 com.android.systemui.R.attr.wallpaperTextColorAccent);
+        boolean aod_clock_accent = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.AOD_CLOCK_ACCENT, 1, UserHandle.USER_CURRENT) == 1;
+        if(aod_clock_accent) {
+        mView.setColors(mLockScreenColor, mLockScreenColor);
+        }
+        else {
         mView.setColors(mDozingColor, mLockScreenColor);
+        }
         mView.animateDoze(mIsDozing, false);
     }
 }

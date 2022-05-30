@@ -5857,6 +5857,12 @@ public final class Settings {
         public static final String DOZE_TRIGGER_DOUBLETAP = "doze_trigger_doubletap";
 
         /**
+         * Apply accent color to AOD clock
+         * @hide
+         */
+         public static final String AOD_CLOCK_ACCENT = "aod_clock_accent";
+
+        /**
          * These are all public system settings
          *
          * @hide
