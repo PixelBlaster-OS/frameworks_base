@@ -78,7 +78,7 @@ public class PixelPropsUtils {
         propsToChange.put("PRODUCT", "raven");
         propsToChange.put("MODEL", "Pixel 6 Pro");
         propsToChange.put("ID", "SQ1D.220205.003");
-        propsToChange.put("FINGERPRINT", "google/raven/raven:12/SP2A.220405.004/8233519:user/release-keys");
+        propsToChange.put("FINGERPRINT", "google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys");
         propsToChange.put("IS_DEBUGGABLE", false);
         propsToChange.put("IS_ENG", false);
         propsToChange.put("IS_USERDEBUG", false);
