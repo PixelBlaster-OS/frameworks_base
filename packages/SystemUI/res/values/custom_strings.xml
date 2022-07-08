@@ -89,4 +89,6 @@
     <!-- Title of statusbar tuner -->
     <string name="status_bar_icons">Status bar icons</string>
 
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Wi-Fi Standard icon</string>
 </resources>
