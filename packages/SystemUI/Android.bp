@@ -178,6 +178,7 @@ android_library {
         "LowLightDreamLib",
         "motion_tool_lib",
         "custom-preference",
+        "bcsmartspace-google",
     ],
     manifest: "AndroidManifest.xml",
 
