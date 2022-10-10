@@ -35,7 +35,7 @@
             android:clipToPadding="false"
             app:forceApplySystemWindowInsetTop="true"
             app:extraMultilineHeightEnabled="true"
-            app:contentScrim="@android:color/transparent"
+            app:contentScrim="@color/collapsing_toolbar_bg"
             app:maxLines="3"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:scrimAnimationDuration="50"
