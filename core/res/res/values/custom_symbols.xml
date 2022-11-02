@@ -20,6 +20,10 @@
     <java-symbol type="string" name="alert_slider_uevent_match_path" />
     <java-symbol type="bool" name="config_hasAlertSlider" />
 
+    <!-- Camera -->
+    <java-symbol type="array" name="config_cameraAuxPackageAllowList" />
+    <java-symbol type="array" name="config_cameraAuxPackageExcludeList" />
+
     <!-- Cycle through ringer modes -->
     <java-symbol type="string" name="volume_dialog_ringer_guidance_normal" />
 
