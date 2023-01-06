@@ -11320,6 +11320,12 @@ public final class Settings {
         public static final String SHOW_WIFI_STANDARD_ICON = "show_wifi_standard_icon";
 
         /**
+         * Whether to trigger doze for new notifications
+         * @hide
+         */
+        public static final String DOZE_FOR_NOTIFICATIONS = "doze_for_notifications";
+
+        /**
          * Whether to show ambient instead of waking for the tap gesture
          * @hide
          */
