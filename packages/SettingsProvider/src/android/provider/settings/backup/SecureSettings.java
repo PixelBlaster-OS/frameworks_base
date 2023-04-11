@@ -225,5 +225,7 @@ public class SecureSettings {
         Settings.Secure.ACCESSIBILITY_FONT_SCALING_HAS_BEEN_CHANGED,
         Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
         Settings.Secure.SHOW_WIFI_STANDARD_ICON,
+        Settings.Secure.DOZE_PICK_UP_GESTURE_AMBIENT,
+        Settings.Secure.DOZE_TAP_GESTURE_AMBIENT
     };
 }
