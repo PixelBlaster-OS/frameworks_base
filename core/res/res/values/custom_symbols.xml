@@ -59,4 +59,8 @@
     <java-symbol type="string" name="reboot_to_bootloader_message" />
     <java-symbol type="string" name="reboot_title" />
     <java-symbol type="string" name="reboot_message" />
+
+    <!-- Delay in ms before invoking single tap gesture
+         Should be set to dt2w max time / 2 when needed -->
+    <java-symbol type="integer" name="config_singleTapDelay" />
 </resources>
