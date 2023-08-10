@@ -15,6 +15,12 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Define device configs on boot -->
+    <string-array name="global_device_configs_override" translatable="false">
+    </string-array>
+    <string-array name="device_configs_override" translatable="false">
+    </string-array>
+
     <!-- Display color inversion availability -->
     <bool name="config_displayInversionAvailable">true</bool>
 
