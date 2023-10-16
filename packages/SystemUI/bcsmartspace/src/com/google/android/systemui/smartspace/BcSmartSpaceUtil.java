@@ -157,7 +157,8 @@ public final class BcSmartSpaceUtil {
             this.tag = str;
         }
 
-        public void startIntent(View view, Intent intent, boolean z) {
+        @Override // com.android.systemui.plugins.BcSmartspaceDataPlugin.IntentStarter
+        public final void startIntent(View view, Intent intent, boolean z) {
             try {
                 view.getContext().startActivity(intent);
             } catch (ActivityNotFoundException | NullPointerException | SecurityException e) {
@@ -165,7 +166,8 @@ public final class BcSmartSpaceUtil {
             }
         }
 
-        public void startPendingIntent(View view, PendingIntent pendingIntent, boolean z) {
+        @Override // com.android.systemui.plugins.BcSmartspaceDataPlugin.IntentStarter
+        public final void startPendingIntent(View view, PendingIntent pendingIntent, boolean z) {
             try {
                 pendingIntent.send();
             } catch (PendingIntent.CanceledException e) {
